@@ -1,0 +1,7 @@
+The 'index.js' import in the SideNav.jsx' file does not require to specify the specific import filename because 'index' is a default filename to export/import.
+
+In the 'PokeCard.jsx' file, there is a warning regarding to a missing dependency of 'loading' in the Effect hook.
+However, the 'loading' state CANNOT be a dependency value here because only changes to the 'selectedPokemon' can trigger the hook.
+
+In the 'PokeCard.jsx' file, since the 'types' property of the pokemon data is an object (not directly the pokemon type data), to access the type of the pokemon the 'type' property needs to be accessed.
+Optional chaining is used whether the 'types' object is not null.
