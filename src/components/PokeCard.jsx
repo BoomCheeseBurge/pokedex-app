@@ -49,7 +49,7 @@ function PokeCard(props) {
 
         if (move in cache) {
             setSkill(cache[move]);
-            console.log('Found move in cache!');
+            // console.log('Found move in cache!');
             return;
         }
 
@@ -60,7 +60,7 @@ function PokeCard(props) {
             const res = await fetch(moveUrl);
             const moveData = await res.json();
 
-            console.log('Fetched move from API', moveData);
+            // console.log('Fetched move from API', moveData);
 
             const description = moveData?.flavor_text_entries.filter(val => val.version_group.name === 'firered-leafgreen')[0]?.flavor_text;
 
@@ -81,9 +81,6 @@ function PokeCard(props) {
         } finally {
             setLoadingSkill(false);
         }
-
-        console.log('Move not found!');
-        return;
     }
 
     useEffect(() => {
@@ -110,7 +107,7 @@ function PokeCard(props) {
          */
         if (selectedPokemon in cache) {
             setData(cache.selectedPokemon);
-            console.log('Found pokemon in cache!');
+            // console.log('Found pokemon in cache!');
             return;
         }
 
